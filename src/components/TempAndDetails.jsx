@@ -65,7 +65,7 @@ const TempAndDetails = ({data}) => {
   const skyMood = data?.main || "waiting";
   const temperature = data?.temp || 15;
   const icon = data?.icon || "01d";
-  const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`
+  const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
 
   return (
     <>

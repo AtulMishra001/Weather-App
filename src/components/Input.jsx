@@ -17,14 +17,23 @@ const Input = ({setWeatherData, setUnit}) => {
   const handleKeyDown = async (event) => {
     if (event.key === 'Enter') {
       handleSearch()
-      // const enteredValue = event.target.value;
-      // var weatherData = await fetchData(enteredValue);
-      // setWeatherData(weatherData)
-      // // console.log(weatherData)
-      // setInputValue(''); // Optional: Clear the input after storing
-      
     }
   };
+
+  const getlocation= async ()=> {
+    async function gotcordinates(position) {
+    let reverseGeoCodingURL = `https://api.geoapify.com/v1/geocode/reverse?lat=${position.coords.latitude}&lon=${position.coords.longitude}&apiKey=05843a77fdab406f879dc3867e97c9a9`
+    const reverseGeoCodingData = await (await fetch(reverseGeoCodingURL)).json();
+    const cityName = reverseGeoCodingData.features[0].properties.city;
+    const weatherData = await fetchData(cityName);
+      setWeatherData(weatherData);
+    }
+
+    function failedLocation() {
+      console.log('there was some Issue');
+    }
+    navigator.geolocation.getCurrentPosition(gotcordinates,failedLocation)
+  }
   return (
     <div className="input-wrapper w-[90%] m-auto flex flex-row  items-center justify-between space-x-3 ">
       <div className="w-3/4 h-[5vh]  flex flex-row  items-center space-x-3 ">
@@ -45,6 +54,7 @@ const Input = ({setWeatherData, setUnit}) => {
       <BiCurrentLocation
         size={30}
         className="cursor-pointer hover:scale-125 transition ease-out"
+        onClick={getlocation}
       />
       </div>
 

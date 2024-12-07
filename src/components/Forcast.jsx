@@ -4,7 +4,7 @@ const Forcast = ({weatherdata}) => {
     const data = [1,2,3,4,5];
     const icon = weatherdata?.icon || "01d"
     const temp = weatherdata?.temp || 15;
-    const iconURL = `http://openweathermap.org/img/wn/${icon}@2x.png`;
+    const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
     console.log(weatherdata)
   return (
     <div>

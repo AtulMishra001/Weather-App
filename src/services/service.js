@@ -9,10 +9,13 @@ const API_KEY = "1aeb89cae2e847a8f7f494c2aaf89d38";
 
 var weatherData; // This will hold the main data at the end.
 var geoData;
-export async function fetchData(city) {
+export async function fetchData(city,coords) {
   try {
     //from here, fetching longituded and latitude by city's name.
-    let GEO_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${city},+91&limit=1&appid=${API_KEY}`;
+    if(coords === undefined) {
+      console.log("coords are undifined")
+    }
+    let GEO_API_URL = `https://api.openweathermap.org/geo/1.0/direct?q=${city},+91&limit=1&appid=${API_KEY}`;
     geoData = await (await fetch(GEO_API_URL)).json(); // fetch Call !!!
 
     // console.log(geoData);
@@ -28,6 +31,12 @@ export async function fetchData(city) {
     } catch (error) {
       console.log("city name not in english" + error);
     }
+
+  
+
+
+
+
     //now fetching real weather data by using longitude and latitude from previous call.
     weatherData = await (
       await fetch(
@@ -69,7 +78,7 @@ export async function fetchData(city) {
 
     console.log(weatherData);
     //********************************************************************************************** */
-    // written by chatGPT
+    // written by chatGPT from line 74 to line 88 this function converts 24hr time formate to 12hr 
 
     function convertToAMPM(timestamp) {
       const date = new Date(timestamp * 1000); // Convert seconds to milliseconds

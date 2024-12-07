@@ -28,15 +28,16 @@ export const TopButtons = ({setWeatherData}) => {
             name: "Seoul"
         }
      ]
+     async function clicked(name) {
+        const weatherData = await fetchData(name);
+        setWeatherData(weatherData);
+     }
 
-
-   
-    // const cities = ["Delhi", "Mubmai", "Agra", "banglore", "Tokyo", "seoul", "bejing", "London"];
   return (
     <div className='flex justify-around items-center'>
         {cities.map((city) => (
             <button key={city.id} 
-            
+            onClick={()=> clicked(city.name)}
             className="text-xl hover:bg-gray-700/20 px-3 py-0 rounded-md transition ease-in
             ">{city.name}</button>
         ))}
