@@ -1,14 +1,9 @@
-/* 
-https://api.openweathermap.org/data/2.5/forecast?lat=${info.latitude}&lon=${info.longitude}&units=metric&appid=1aeb89cae2e847a8f7f494c2aaf89d38
 
-let GEO_API_URL = `http://api.openweathermap.org/geo/1.0/direct?q=${city},+91&limit=1&appid=${API_KEY}`;
-const API_KEY = "1aeb89cae2e847a8f7f494c2aaf89d38";
-*/
 
-const API_KEY = "1aeb89cae2e847a8f7f494c2aaf89d38";
 
 var weatherData; // This will hold the main data at the end.
 var geoData;
+const API_KEY = "1aeb89cae2e847a8f7f494c2aaf89d38";
 export async function fetchData(city,coords) {
   try {
     //from here, fetching longituded and latitude by city's name.
