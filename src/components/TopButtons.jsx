@@ -5,7 +5,7 @@ export const TopButtons = ({setWeatherData}) => {
     const cities = [
         {
             id: 1,
-            name: "London"
+            name: "Delhi"
         },
 
         {
@@ -15,7 +15,7 @@ export const TopButtons = ({setWeatherData}) => {
 
         {
             id: 3,
-            name: "Delhi"
+            name: "London"
         },
 
         {
@@ -25,7 +25,7 @@ export const TopButtons = ({setWeatherData}) => {
 
         {
             id: 5,
-            name: "Seoul"
+            name: "New york"
         }
      ]
      async function clicked(name) {

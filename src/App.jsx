@@ -12,16 +12,16 @@ function App() {
   const [weatherData, setWeatherData] = useState(null);
   const [unit , setUnit] = useState("C");
   // setInterval(()=>{console.log(unit)}, 2000)
-
+ 
   return (
     <>
     <div className="navbar mx-auto mt-5 py-10 px-32 max-w-screen-lg h-auto min-h-[770px] bg-gradient-to-br shadow-xl shadow-gray-400 from-cyan-600  to-blue-700 text-white flex gap-7 flex-col justify-center">
       <div className='flex flex-col gap-6'>
       <TopButtons setWeatherData={setWeatherData}/>
       <Input setWeatherData={setWeatherData} setUnit = {setUnit}/>
-      <TimeandLocation weather = {weatherData} unit = {unit}/>
+      <TimeandLocation weather = {weatherData} />
       </div>
-      <TempAndDetails data = {weatherData}/>
+      <TempAndDetails data = {weatherData} unit = {unit}/>
       <Forcast weatherdata = {weatherData} />
       {/* <Forcast weatherdata = {weatherData}/> */}
     </div>

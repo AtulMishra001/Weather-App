@@ -6,6 +6,7 @@ const TimeandLocation = ({weather}) => {
   const dt = weather?.dt || Math.floor(new Date().getTime() / 1000);
   const date = dt ? new Date(dt * 1000) : new Date();
   const formattedDate = date.toDateString();
+  console.log(formattedDate);
   return (
     <div>
         <div className='flex items-center justify-center '>

@@ -6,9 +6,9 @@ import { BiSolidDropletHalf } from "react-icons/bi";
 
 
 
-const TempAndDetails = ({data}) => {
+const TempAndDetails = ({data, unit}) => {
 
-// console.log(data?.updatedsunrise)
+console.log(unit)
   const verticalDetails = [
     {
       id: 1,
@@ -61,9 +61,19 @@ const TempAndDetails = ({data}) => {
       value: `${Math.round(data?.temp_min || 15)}˚`,
     },
   ];
+
+  function celciusToFahrenheit() {
+    if(unit === 'F') {
+      temperature = (temperature * 1.8) + 32;
+      return temperature;
+    }
+    if(unit === 'C') {
+      return temperature;
+    }
+  }
   // console.log(data);
   const skyMood = data?.main || "waiting";
-  const temperature = data?.temp || 15;
+  let temperature = data?.temp || 15;
   const icon = data?.icon || "01d";
   const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`
 
@@ -74,7 +84,7 @@ const TempAndDetails = ({data}) => {
       </div>
       <div className="flex justify-between items-center w-full ">
         <img src={iconURL} alt="" />
-        <p className="text-5xl opacity-80 ">{`${Math.round(temperature)}˚`}</p>
+        <p className="text-5xl opacity-80 ">{`${Math.round(celciusToFahrenheit())}˚`}</p>
         <div className="flex flex-col items-start space-y-3">
           {verticalDetails.map(({ id, Icon, tital, value }) => (
             <div key={id} className="flex font-light text-sm items-center justify-center">

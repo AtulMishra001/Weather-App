@@ -76,6 +76,36 @@ export async function fetchData(city,coords) {
 
     const { icon, main } = weatherData.list[0].weather[0];
 
+
+
+    const forcast = [
+      {
+        temp : weatherData.list[1].main.temp,
+        icon : weatherData.list[1].weather[0].icon,
+        main: weatherData.list[1].weather[0].main
+      },
+      {
+        temp : weatherData.list[2].main.temp,
+        icon : weatherData.list[2].weather[0].icon,
+        main: weatherData.list[2].weather[0].main
+      },
+      {
+        temp : weatherData.list[3].main.temp,
+        icon : weatherData.list[3].weather[0].icon,
+        main: weatherData.list[3].weather[0].main
+      },
+      {
+        temp : weatherData.list[4].main.temp,
+        icon : weatherData.list[4].weather[0].icon,
+        main: weatherData.list[4].weather[0].main
+      },
+      {
+        temp : weatherData.list[5].main.temp,
+        icon : weatherData.list[5].weather[0].icon,
+        main: weatherData.list[5].weather[0].main
+      }
+    ];
+
     console.log(weatherData);
     //********************************************************************************************** */
     // written by chatGPT from line 74 to line 88 this function converts 24hr time formate to 12hr 
@@ -117,6 +147,7 @@ export async function fetchData(city,coords) {
       speed,
       icon,
       main,
+      forcast
     };
   }
   return formateWeatherData(weatherData); //finally returning the data. to JSX file
