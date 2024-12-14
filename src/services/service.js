@@ -101,7 +101,7 @@ export async function fetchData(city,coords) {
       }
     ];
 
-    console.log(weatherData);
+    // console.log(weatherData);
     //********************************************************************************************** */
     // written by chatGPT from line 74 to line 88 this function converts 24hr time formate to 12hr 
 
