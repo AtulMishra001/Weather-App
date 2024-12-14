@@ -1,9 +1,9 @@
-
+require('dotenv').config();
 
 
 var weatherData; // This will hold the main data at the end.
 var geoData;
-const API_KEY = "1aeb89cae2e847a8f7f494c2aaf89d38";
+const API_KEY = process.env.WEATHER_API_KEY;
 export async function fetchData(city,coords) {
   try {
     //from here, fetching longituded and latitude by city's name.
