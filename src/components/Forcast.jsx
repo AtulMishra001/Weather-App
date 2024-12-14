@@ -9,7 +9,7 @@ const Forcast = ({weatherdata}) => {
         const iconURL = `https://openweathermap.org/img/wn/${icon}@2x.png`;
         return iconURL;
     }
-    console.log(weatherdata)
+    // console.log(weatherdata)
   return (
     <div>
         <div className='flex items-center justify-start '></div>

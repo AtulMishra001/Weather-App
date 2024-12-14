@@ -8,7 +8,7 @@ import { BiSolidDropletHalf } from "react-icons/bi";
 
 const TempAndDetails = ({data, unit}) => {
 
-console.log(unit)
+// console.log(unit)
   const verticalDetails = [
     {
       id: 1,
