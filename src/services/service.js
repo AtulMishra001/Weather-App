@@ -1,9 +1,7 @@
-require('dotenv').config();
-
 
 var weatherData; // This will hold the main data at the end.
 var geoData;
-const API_KEY = process.env.WEATHER_API_KEY;
+const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 export async function fetchData(city,coords) {
   try {
     //from here, fetching longituded and latitude by city's name.
