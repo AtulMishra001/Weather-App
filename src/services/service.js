@@ -35,7 +35,7 @@ export async function fetchData(city,coords) {
     //now fetching real weather data by using longitude and latitude from previous call.
     weatherData = await (
       await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=1aeb89cae2e847a8f7f494c2aaf89d38`
+        `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
       )
     ).json();
 
