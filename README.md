@@ -4,7 +4,7 @@ note: currently this project is not designed for Mobile devices. I am working on
 
 This is a weather app which gives you weather info of overall weather, temperature, wind, humidity and a 3 hour step forcast. This project is created only for skill development so the data shown in this app may vary from real data.
 
-[hosted link](https://atulmishra.in)
+[hosted link](https://weather-app-atul-mishras-projects-17770d9f.vercel.app/)
 
 ### Technologies used
 
